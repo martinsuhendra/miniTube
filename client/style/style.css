@@ -1,0 +1,17 @@
+* {
+    margin: 0,;
+    padding : 0
+}
+
+div.ex1 {
+    margin-top: 20px;
+    background-color:white;
+    width: 100%;
+    height: 500px;
+    overflow: scroll;
+}
+
+div.ex2 {
+    margin-top: 20px;
+    margin-left: 0px
+}
