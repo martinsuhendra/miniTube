@@ -27,12 +27,18 @@
       media="screen,projection"
     />
     <link rel="stylesheet" type="text/css" href="style/style.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <!--Let browser know website is optimized for mobile-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini-Tube</title>
   </head>
-  <body>
+  <body>    
     <div id="app">
       <!--Search NavBar-->
       <nav>
@@ -56,46 +62,123 @@
 
       <!--Main Container-->
       <div class="container">
-
-        
         <div class="row" style="display: flex; justify-content: space-around">
+          <div class="col s6 ex1" style="margin-left:-10%">
+            <!-- Grey navigation panel -->
+            <h6>Trending videos :</h6>
+            <p>
+              Lorem ipsum, or lipsum as it is sometimes known, is dummy text
+              used in laying out print, graphic or web designs. The passage is
+              attributed to an unknown typesetter in the 15th century who is
+              thought to have scrambled parts of Cicero's De Finibus Bonorum et
+              Malorum for use in a type specimen book. It usually begins with:
+              “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.” The
+              purpose of lorem ipsum is to create a natural looking block of
+              text (sentence, paragraph, page, etc.) that doesn't distract from
+              the layout. A practice not without controversy, laying out pages
+              with meaningless filler text can be very useful when the focus is
+              meant to be on design, not content. The passage experienced a
+              surge in popularity during the 1960s when Letraset used it on
+              their dry-transfer sheets, and again during the 90s as desktop
+              publishers bundled the text with their software. Today it's seen
+              all around the web; on templates, websites, and stock designs. Use
+              our generator to get your own, or read on for the authoritative
+              history of lorem ipsum.
+            </p>
+          </div>
 
-                
-            <div class="col s6 ex1" style="margin-left:-10%">
-                <!-- Grey navigation panel -->
-                <h6>Trending videos :</h6>
-                <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. 
-                   The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. 
-                   It usually begins with:
-                   “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
-                    The purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.
-                    The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum.</p>
+          <div class="col s9 m8 ex2" style="margin-left: 140px;">
+            <!-- Teal page content  -->
+            <h5 style="display: flex; justify-content: center">Video Title</h5>
+            <div data-aos="zoom-in">
+              <div
+                class="video-container"
+                style="display: flex; justify-content: center"
+              >
+                <iframe
+                  width="853"
+                  height="480"
+                  src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
-        
-            <div class="col s9 m8 ex2" style="margin-left: 140px;">
-                <!-- Teal page content  -->
-                <h5 style="display: flex; justify-content: center">Video Title</h5>
-                <div class="video-container" style="display: flex; justify-content: center">
-                    <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <h5>Description</h5>
-                <p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. 
-                   The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
-                </p>
-                <div>
-                    <a class="waves-effect waves-light btn-small"><i class="material-icons left">thumb_up</i>Like</a>
-                    <a class="waves-effect waves-light btn-small"><i class="fab fa-facebook-f"></i> Share</a>
-                </div>
+            <h5>Description</h5>
+            <p>
+              Lorem ipsum, or lipsum as it is sometimes known, is dummy text
+              used in laying out print, graphic or web designs. The passage is
+              attributed to an unknown typesetter in the 15th century who is
+              thought to have scrambled parts of Cicero's De Finibus Bonorum et
+              Malorum for use in a type specimen book.
+            </p>
+            <div data-aos="flip">
+              <a class="waves-effect waves-light btn-small"><i class="material-icons left">thumb_up</i>Like</a>
+              <a class="waves-effect waves-light btn-small"
+                ><i class="fab fa-facebook-f"></i> Share</a
+              >
             </div>
-        
-            </div>
-
+          </div>
         </div>
+      </div>
+
+
+      <!-- Form-->
+      <div class="container" style="width: 50%">
+          <h6 style="margin-left: 10px; margin-bottom: 30px">Share Video</h6>
+        <div class="row">
+            <form class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input placeholder="" id="first_name" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input placeholder="" id="first_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="email" type="email" class="validate">
+                  <label for="email">Title</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12">
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">mode_edit</i>
+                      <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                      <label for="icon_prefix2">Description</label>
+                  </div>
+                </div>
+              </div>
+              <div class="file-field input-field">
+                <div class="btn">
+                  <span>File</span>
+                  <input type="file">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text">
+                </div>
+              </div>
+              <div class="row" style="display: flex; justify-content:center">
+                  <a class="waves-effect waves-light btn-small"><i class="material-icons left">cloud_upload</i>Upload</a>
+              </div>
+            </form>
+          </div>
+
+      </div>
     </div>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
