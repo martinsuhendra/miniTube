@@ -6,6 +6,7 @@ const videoSchema = new Schema({
     user: String,
     video_path: String,
     thumbnail_path:String,
+    description:String,
     like: Number,
     public: Boolean
 })

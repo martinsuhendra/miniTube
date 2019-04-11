@@ -131,25 +131,21 @@
             <form class="col s12">
               <div class="row">
                 <div class="input-field col s6">
-                  <input placeholder="" id="first_name" type="text" class="validate">
-                  <label for="first_name">First Name</label>
-                </div>
-                <div class="input-field col s6">
-                  <input placeholder="" id="first_name" type="text" class="validate">
-                  <label for="last_name">Last Name</label>
+                  <input placeholder="" v-model="user" id="first_name" type="text" class="validate">
+                  <label for="user">Full Name</label>
                 </div>
               </div>
               <div class="row">
                 <div class="input-field col s6">
-                  <input id="email" type="email" class="validate">
-                  <label for="email">Title</label>
+                  <input id="title" type="text" v-model="title">
+                  <label for="text">Title</label>
                 </div>
               </div>
               <div class="row">
                 <div class="col s12">
                   <div class="input-field col s12">
                       <i class="material-icons prefix">mode_edit</i>
-                      <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                      <textarea id="icon_prefix2" class="materialize-textarea" v-model="description"></textarea>
                       <label for="icon_prefix2">Description</label>
                   </div>
                 </div>
@@ -157,13 +153,13 @@
               <div class="file-field input-field">
                 <div class="btn">
                   <span>File</span>
-                  <input type="file">
+                  <input type="file" id="file" ref="file" v-on:change="handleFileUpload()">
                 </div>
                 <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
+                  <input class="file-path validate" type="text" v-model="video_path">
                 </div>
               </div>
-              <div class="row" style="display: flex; justify-content:center">
+              <div class="row" style="display: flex; justify-content:center" v-on:click.prevent="addVideo">
                   <a class="waves-effect waves-light btn-small"><i class="material-icons left">cloud_upload</i>Upload</a>
               </div>
             </form>
@@ -173,6 +169,7 @@
     </div>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
