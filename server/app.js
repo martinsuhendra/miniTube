@@ -13,6 +13,9 @@ app.use(cors())
 
 
 app.use('/', router)
+app.get('/*', (req,res) => {
+    res.status(404).json('error not found 404')
+})
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
