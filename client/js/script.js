@@ -4,6 +4,7 @@ new Vue({
     el: `#app`,
     data:{
         title: '',
+        videoForm:"",
         user: '',
         video_path: '',
         description: '',
@@ -13,45 +14,22 @@ new Vue({
         file: null,
         videos_list: [],
         onShow: '',
-        fbLink: ''
+        fbLink: '',
+        formAdd : false,
+        mainContent : true
     },   
     created() {
         this.loadVideo()
     },
     methods:{
-        // uploadImage(event) {
-        //     this.file = event.target.files[0]
-        // },
-        // addVideo(){
-        //     let videoForm = {
-        //         title: this.title,
-        //         user: this.user,
-        //         description: this.description,
-        //         thumbnail_path: this.thumbnail_path,
-        //         like: this.like,
-        //         public: this.public,
-        //     }
-        //     const fd = new FormData()
-        //     fd.append('video', this.file, this.file.name)
-        //     axios.post(`${serverURL}/videos/upload`,fd)
-        //     .then(({data})=>{
-        //         console.log('masuk sini ga??');
-        //         return axios.post(`${serverURL}/videos`,{videoForm, video_path: data})
-        //     })
-        //     .then(data=>{
-        //         console.log(data);
-        //     })
-        //     .catch(err=>{
-        //         console.log(err.message);
-        //         console.log("GAGAL");
-        //     })
-        // },
+
         loadVideo() {
             console.log('masuk load video - vue')
             axios
             .get(serverURL + '/videos')
             .then(({data})=> {
-                
+                this.formAdd = false
+                this.mainContent = true
                 this.videos_list = data
             })
             .catch( err => {
@@ -59,27 +37,25 @@ new Vue({
             })
         },
         submitComponent(videoForm) {
-        // let videoForm = {
-        //             title: this.title,
-        //             user: this.user,
-        //             description: this.description,
-        //             thumbnail_path: this.thumbnail_path,
-        //             like: this.like,
-        //             public: this.public,
-        //     }
 
             const fd = new FormData()
             fd.append('video', videoForm.file, videoForm.file.name)
             axios.post(`${serverURL}/videos/upload`,fd)
             .then(({data})=>{
+                this.loadVideo()
+                this.formAdd = false
+                this.mainContent = true
                 console.log(videoForm,'ini videoform');
-                
                 console.log(data);
                 console.log("SUKSES");
                 return axios.post(`${serverURL}/videos`,{videoForm, video_path: data})
             })
             .then(data=>{
-                this.videos_list.push(data)
+                
+                // this.videos_list.push(data)
+                this.loadVideo()
+                this.mainContent = true
+                this.formAdd = false
                 console.log(data);
             })
             .catch(err=>{
@@ -100,6 +76,14 @@ new Vue({
                 console.log(err)
                 console.log('eror di findOne -client')
             })
+        },
+        showForm(){
+            this.formAdd = true
+            this.mainContent = false
+        },
+        showContent(){
+            this.mainContent = true,
+            this.formAdd = false
         }
     }
 })

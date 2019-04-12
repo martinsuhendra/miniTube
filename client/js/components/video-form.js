@@ -33,21 +33,14 @@ Vue.component('video-form',{
                   <input class="file-path validate" type="text" v-model="video_path">
                 </div>
               </div>
-              <div class="row" style="display: flex; justify-content:center">
+              <div class="row" style="display: flex; justify-content:space-around">
                   <a class="waves-effect waves-light btn-small" v-on:click="submitVideoForm"><i class="material-icons left">cloud_upload</i>Upload</a>
+                  <a class="waves-effect waves-light btn-small" v-on:click="showContent"><i class="material-icons left"></i>Cancel</a>
               </div>
             </form>
     `,
     data() {
         return {
-            videoDetail: {
-                title: '',
-                user: '',
-                description: '',
-                thumbnail_path: '',
-                public: '',
-                file:null
-            },
             title: '',
             user: '',
             video_path: '',
@@ -75,6 +68,9 @@ Vue.component('video-form',{
         uploadImage(event) {
             this.file = event.target.files[0]
             // console.log(this.file)
+        },
+        hide(){
+          this.$emit('show-content')
         }
     }
 })

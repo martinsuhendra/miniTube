@@ -24,8 +24,8 @@ Vue.component('main-video', {
     <div data-aos="flip">
       <a class="waves-effect waves-light btn-small"><i class="material-icons left">thumb_up</i>Like</a>
       <a class="waves-effect waves-light btn-small"
-        ><i class="fab fa-facebook-f"></i> Share</a
-      >
+        ><i class="fab fa-facebook-f"></i> Share</a>
+      <a class="waves-effect waves-light btn"><i class="material-icons left">cloud_upload</i>Upload</a>
     </div>
   </div>
     `,
