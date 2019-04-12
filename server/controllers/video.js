@@ -25,7 +25,13 @@ class VideoController {
             _id:req.params.id
         })
         .then(found => {
-            
+            res.status(200).json(found)
+        })
+        .catch(err => {
+            res.status(500).json({
+                error:err,
+                message:"server- error di findOne"
+            })
         })
 
 
