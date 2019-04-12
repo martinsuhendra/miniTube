@@ -20,6 +20,17 @@ class VideoController {
         })
     }
 
+    static findOne(req,res) {
+        Video.findOne({
+            _id:req.params.id
+        })
+        .then(found => {
+            
+        })
+
+
+    }
+
 
     static create(req,res) {
  

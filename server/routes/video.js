@@ -4,6 +4,7 @@ const Multer = require('multer');
 const gcsMiddlewares = require('../middlewares/google-cloud-storage')
 
 router.post('/', VideoController.create)
+router.get('/:id', VideoController.findOne)
 router.get('/', VideoController.findAll)
 
   
