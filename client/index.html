@@ -127,7 +127,7 @@
       <div class="container" style="width: 50%">
           <h6 style="margin-left: 10px; margin-bottom: 30px">Share Video</h6>
         <div class="row">
-            <form class="col s12" enctype="multipart/form-data" id="video-form" >
+            <!-- <form class="col s12" enctype="multipart/form-data" id="video-form" >
               <div class="row">
                 <div class="input-field col s6">
                   <input placeholder="" v-model="user" id="first_name" type="text" class="validate">
@@ -161,7 +161,9 @@
               <div class="row" style="display: flex; justify-content:center" v-on:click.prevent="addVideo">
                   <a class="waves-effect waves-light btn-small" v-on:click="addVideo"><i class="material-icons left">cloud_upload</i>Upload</a>
               </div>
-            </form>
+            </form> -->
+
+            <video-form v-on:submit-video-form="submitComponent"></video-form>
           </div>
 
       </div>
@@ -172,6 +174,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <!-- component -->
+    <script src="./js/components/video-form.js"></script>
+    <script src="./js/components/video-frame.js"></script>
+
+    <!-- script -->
     <script src="js/script.js"></script>
     <script>
       AOS.init();

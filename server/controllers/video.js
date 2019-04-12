@@ -7,7 +7,10 @@ class VideoController {
     static findAll(req,res) {
         Video.find()
         .then(found => {
+            console.log('masuk findAll')
+            console.log(found)
             res.status(200).json(found)
+            
         })
         .catch(err => {
             res.status(500).json({
