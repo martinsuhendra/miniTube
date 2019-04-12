@@ -63,34 +63,21 @@
       </nav>
 
       <!--Main Container-->
-      <div class="container">
+      <div class="container" v-if="mainContent">
         <div class="row" style="display: flex; justify-content: space-around">
           <div class="col s6 ex1" style="margin-left:-10%">
             <!-- Grey navigation panel -->
             <div class="container">
               <h6>Trending videos :</h6>
             </div>
-            <div class="row" v-for="(video, index) in videos_list" :key="index">
-                <!-- Card Content -->
-                <div class="container center-align">
-                  <iframe
-                   width="300"
-                   v-bind:src="video.video_path"
-                   frameborder="0"
-                   allowfullscreen
-                   controls="controls" 
-                   autoplay="false"
-                 ></iframe>
-                 <div class="container center-align">
-                    <a href="#" v-on:click="findOneVideo(video._id)">{{video.title}}</a>
-                  </div>
-                </div>
-            </div>
+            <video-frame v-bind:videos_list="videos_list" v-on:pass-video="findOneVideo"></video-frame>
           </div>
 
           <main-video v-bind:onShow="onShow"></main-video>
-          <div class="col s9 m8 ex2" style="margin-left: 140px;">
-            <!-- Teal page content  -->
+
+
+          <div class="col s9 m8 ex2" style="margin-left: 140px;" v-if="mainContent">
+            <!-- Kanan  -->
             <h5 style="display: flex; justify-content: center">Video Title</h5>
             <div data-aos="zoom-in">
               <div
@@ -112,6 +99,8 @@
             <div data-aos="flip">
               <a class="waves-effect waves-light btn-small"><i class="material-icons left">thumb_up</i>Like</a>
               <a :href="'https://www.facebook.com/sharer/sharer.php?u='+ onShow.video_path +'%2F&amp;src=sdkpreparse'" class="waves-effect waves-light btn-small"><i class="material-icons left"></i>Share</a>
+              <a class="waves-effect waves-light btn" v-on:click="showForm"><i class="material-icons left">cloud_upload</i>Upload</a>
+              
             <!-- <a :href="'https://www.facebook.com/sharer/sharer.php?u='+ onShow.video_path +'%2F&amp;src=sdkpreparse'">My Custom Button</a> -->
             </div>
           </div>
@@ -121,9 +110,8 @@
 
       <!-- Form-->
       <div class="container" style="width: 50%">
-          <h6 style="margin-left: 10px; margin-bottom: 30px">Share Video</h6>
-        <div class="row">
-
+          <h6 style="margin-left: 10px; margin-bottom: 30px">Upload Video</h6>
+        <div class="row" v-if="formAdd">
             <video-form v-on:submit-video-form="submitComponent"></video-form>
           </div>
 
