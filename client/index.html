@@ -36,6 +36,7 @@
     <!--Let browser know website is optimized for mobile-->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Mini-Tube</title>
   </head>
   <body>  
@@ -73,9 +74,7 @@
             <video-frame v-bind:videos_list="videos_list" v-on:pass-video="findOneVideo"></video-frame>
           </div>
 
-          <main-video v-bind:onShow="onShow"></main-video>
-
-
+          <!-- <main-video v-bind:onShow="onShow"></main-video> -->
           <div class="col s9 m8 ex2" style="margin-left: 140px;" v-if="mainContent">
             <!-- Kanan  -->
             <h5 style="display: flex; justify-content: center">Video Title</h5>
@@ -109,12 +108,14 @@
 
 
       <!-- Form-->
-      <div class="container" style="width: 50%">
+      <div class="container" style="width: 50%" v-if="formAdd">
           <h6 style="margin-left: 10px; margin-bottom: 30px">Upload Video</h6>
-        <div class="row" v-if="formAdd">
+        <div class="row">
             <video-form v-on:submit-video-form="submitComponent"></video-form>
-          </div>
-
+        </div>
+        <div>
+          <a class="waves-effect waves-light btn-small" v-on:click="showContent" v-if="formAdd" style="display:flex"><i class="material-icons left"></i>Cancel</a>
+        </div>
       </div>
     </div>
     <!--JavaScript at end of body for optimized loading-->
@@ -123,7 +124,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- component -->
     <script src="./js/components/video-form.js"></script>

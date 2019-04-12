@@ -20,11 +20,6 @@ Vue.component('video-frame', {
         </div>
         </div>
     `,
-    data() {
-        return {
-            videos_list : data
-        }
-    },
     methods: {
         passVideo(id){
             this.$emit('pass-video', id)

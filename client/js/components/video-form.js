@@ -35,7 +35,7 @@ Vue.component('video-form',{
               </div>
               <div class="row" style="display: flex; justify-content:space-around">
                   <a class="waves-effect waves-light btn-small" v-on:click="submitVideoForm"><i class="material-icons left">cloud_upload</i>Upload</a>
-                  <a class="waves-effect waves-light btn-small" v-on:click="showContent"><i class="material-icons left"></i>Cancel</a>
+                  
               </div>
             </form>
     `,
