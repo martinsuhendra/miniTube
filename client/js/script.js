@@ -32,8 +32,8 @@ new Vue({
             const fd = new FormData()
             fd.append('video', this.file, this.file.name)
             axios.post(`${serverURL}/videos/upload`,fd)
-            .then(response=>{
-                console.log(response);
+            .then(({data})=>{
+                console.log(data);
                 console.log("SUKSES");
             })
             .catch(err=>{

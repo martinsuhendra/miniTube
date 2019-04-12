@@ -35,7 +35,6 @@ const gcsHelpers = require('../helpers/google-cloud-storage');
   
     stream.on('finish', () => {
       req.file.cloudStorageObject = gcsFileName;
-  
       return file.makePublic()
         .then(() => {
           req.file.gcsUrl = gcsHelpers.getPublicUrl(bucketName, gcsFileName);
