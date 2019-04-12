@@ -6,6 +6,8 @@ const gcsMiddlewares = require('../middlewares/google-cloud-storage')
 router.post('/', VideoController.create)
 router.get('/:id', VideoController.findOne)
 router.get('/', VideoController.findAll)
+router.patch('/:id', VideoController.updateLike)
+router.delete('/:id', VideoController.removeLike)
 
   
 const multer = Multer({
@@ -27,5 +29,7 @@ router.post(
     return res.status(500).send('Unable to upload');
   },
 );
+
+
 
 module.exports = router

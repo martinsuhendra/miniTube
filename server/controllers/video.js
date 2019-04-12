@@ -61,6 +61,46 @@ class VideoController {
             })
         })
     }
+
+    static updateLike(req,res) {
+        Video.findOne({
+            _id:req.params.id
+        })
+        .then(found => {
+            found.like += 1
+            return found.save()
+        })
+        .then(saved => {
+            res.status(200).json(saved)
+        })
+        .catch(err => {
+            res.status(500).json({
+                errror:err,
+                message: "error update like"
+            })
+        })
+        
+    }
+
+    static removeLike(req,res) {
+        Video.findOne({
+            _id:req.params.id
+        })
+        .then(found => {
+            found.like -= 1
+            console.log(found)
+            return found.save()
+        })
+        .then(saved => {
+            res.status(200).json(saved)
+        })
+        .catch( err => {
+            res.status(500).json({
+                error:err,
+                message:"error removing like"
+            })
+        })
+    }
 }
 
 
