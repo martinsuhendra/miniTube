@@ -17,27 +17,25 @@ new Vue({
             this.file = event.target.files[0]
         },
         addVideo(){
-            // console.log("TES MASUK");
-            // let videos = new FormData(document.getElementById('video-form'))
-            // console.log(videos)
-            // let videoForm = {
-            //     title: this.title,
-            //     user: this.user,
-            //     video_path: this.video_path,
-            //     description: this.description,
-            //     thumbnail_path: this.thumbnail_path,
-            //     like: this.like,
-            //     public: this.public,
-            // }
+            let videoForm = {
+                title: this.title,
+                user: this.user,
+                description: this.description,
+                thumbnail_path: this.thumbnail_path,
+                like: this.like,
+                public: this.public,
+            }
             const fd = new FormData()
             fd.append('video', this.file, this.file.name)
             axios.post(`${serverURL}/videos/upload`,fd)
             .then(({data})=>{
+                return axios.post(`${serverURL}/videos`,{videoForm, video_path: data})
+            })
+            .then(data=>{
                 console.log(data);
-                console.log("SUKSES");
             })
             .catch(err=>{
-                console.log(err.ma);
+                console.log(err.message);
                 console.log("GAGAL");
             })
         }
