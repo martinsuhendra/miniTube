@@ -12,7 +12,8 @@ new Vue({
         public: '',
         file: null,
         videos_list: [],
-        onShow: ''
+        onShow: '',
+        fbLink: ''
     },   
     created() {
         this.loadVideo()
@@ -78,6 +79,7 @@ new Vue({
                 return axios.post(`${serverURL}/videos`,{videoForm, video_path: data})
             })
             .then(data=>{
+                this.videos_list.push(data)
                 console.log(data);
             })
             .catch(err=>{
