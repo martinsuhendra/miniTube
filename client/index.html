@@ -38,7 +38,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini-Tube</title>
   </head>
-  <body>    
+  <body>  
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v3.2"></script>  
     <div id="app">
       <!--Search NavBar-->
       <nav>
@@ -108,9 +110,8 @@
             </p>
             <div data-aos="flip">
               <a class="waves-effect waves-light btn-small"><i class="material-icons left">thumb_up</i>Like</a>
-              <a class="waves-effect waves-light btn-small"
-                ><i class="fab fa-facebook-f"></i> Share</a
-              >
+              <a :href="'https://www.facebook.com/sharer/sharer.php?u='+ onShow.video_path +'%2F&amp;src=sdkpreparse'" class="waves-effect waves-light btn-small"><i class="material-icons left"></i>Share</a>
+            <!-- <a :href="'https://www.facebook.com/sharer/sharer.php?u='+ onShow.video_path +'%2F&amp;src=sdkpreparse'">My Custom Button</a> -->
             </div>
           </div>
         </div>
