@@ -1,5 +1,5 @@
 Vue.component('video-frame', {
-    props: [''],
+    props: ['data'],
     template: `
     <div
         class="video-container"
