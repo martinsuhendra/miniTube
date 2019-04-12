@@ -80,8 +80,8 @@
                    autoplay="false"
                  ></iframe>
                  <div class="container center-align">
-                   <a href="" >{{video.title}}</a>
-                 </div>
+                    <a href="#" v-on:click="findOneVideo(video._id)">{{video.title}}</a>
+                  </div>
                 </div>
             </div>
           </div>
@@ -93,22 +93,18 @@
               <div
                 class="video-container"
                 style="display: flex; justify-content: center">
-                <!-- <iframe
+                <iframe
                   width="853"
                   height="480"
-                  src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0"
+                  v-bind:src="onShow.video_path"
                   frameborder="0"
                   allowfullscreen
-                ></iframe> -->
+                ></iframe>
               </div>
             </div>
             <h5>Description</h5>
             <p>
-              Lorem ipsum, or lipsum as it is sometimes known, is dummy text
-              used in laying out print, graphic or web designs. The passage is
-              attributed to an unknown typesetter in the 15th century who is
-              thought to have scrambled parts of Cicero's De Finibus Bonorum et
-              Malorum for use in a type specimen book.
+              {{onShow.description}}
             </p>
             <div data-aos="flip">
               <a class="waves-effect waves-light btn-small"><i class="material-icons left">thumb_up</i>Like</a>
@@ -142,6 +138,7 @@
     <!-- component -->
     <script src="./js/components/video-form.js"></script>
     <script src="./js/components/video-frame.js"></script>
+    <script src="./js/components/main-video.js"></script>
 
     <!-- script -->
     <script src="js/script.js"></script>

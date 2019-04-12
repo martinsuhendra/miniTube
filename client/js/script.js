@@ -11,7 +11,8 @@ new Vue({
         like: 0,
         public: '',
         file: null,
-        videos_list: []
+        videos_list: [],
+        onShow: ''
     },   
     created() {
         this.loadVideo()
@@ -82,6 +83,20 @@ new Vue({
             .catch(err=>{
                 console.log(err.ma);
                 console.log("GAGAL");
+            })
+        },
+        findOneVideo(id) {
+            console.log(id)
+            console.log('masuk findone vid')
+            axios
+            .get(serverURL + '/videos/' + id)
+            .then(({data}) => {
+                this.onShow = data
+                console.log(data)
+            })
+            .catch(err => {
+                console.log(err)
+                console.log('eror di findOne -client')
             })
         }
     }
