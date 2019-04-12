@@ -20,29 +20,30 @@ new Vue({
         // uploadImage(event) {
         //     this.file = event.target.files[0]
         // },
-        addVideo(){
-            let videoForm = {
-                title: this.title,
-                user: this.user,
-                description: this.description,
-                thumbnail_path: this.thumbnail_path,
-                like: this.like,
-                public: this.public,
-            }
-            const fd = new FormData()
-            fd.append('video', this.file, this.file.name)
-            axios.post(`${serverURL}/videos/upload`,fd)
-            .then(({data})=>{
-                return axios.post(`${serverURL}/videos`,{videoForm, video_path: data})
-            })
-            .then(data=>{
-                console.log(data);
-            })
-            .catch(err=>{
-                console.log(err.message);
-                console.log("GAGAL");
-            })
-        },
+        // addVideo(){
+        //     let videoForm = {
+        //         title: this.title,
+        //         user: this.user,
+        //         description: this.description,
+        //         thumbnail_path: this.thumbnail_path,
+        //         like: this.like,
+        //         public: this.public,
+        //     }
+        //     const fd = new FormData()
+        //     fd.append('video', this.file, this.file.name)
+        //     axios.post(`${serverURL}/videos/upload`,fd)
+        //     .then(({data})=>{
+        //         console.log('masuk sini ga??');
+        //         return axios.post(`${serverURL}/videos`,{videoForm, video_path: data})
+        //     })
+        //     .then(data=>{
+        //         console.log(data);
+        //     })
+        //     .catch(err=>{
+        //         console.log(err.message);
+        //         console.log("GAGAL");
+        //     })
+        // },
         loadVideo() {
             console.log('masuk load video - vue')
             axios
@@ -55,13 +56,28 @@ new Vue({
                 console.log(err)
             })
         },
-        submitComponent(data) {
+        submitComponent(videoForm) {
+        // let videoForm = {
+        //             title: this.title,
+        //             user: this.user,
+        //             description: this.description,
+        //             thumbnail_path: this.thumbnail_path,
+        //             like: this.like,
+        //             public: this.public,
+        //     }
+
             const fd = new FormData()
-            fd.append('video', this.file, this.file.name)
+            fd.append('video', videoForm.file, videoForm.file.name)
             axios.post(`${serverURL}/videos/upload`,fd)
             .then(({data})=>{
+                console.log(videoForm,'ini videoform');
+                
                 console.log(data);
                 console.log("SUKSES");
+                return axios.post(`${serverURL}/videos`,{videoForm, video_path: data})
+            })
+            .then(data=>{
+                console.log(data);
             })
             .catch(err=>{
                 console.log(err.ma);

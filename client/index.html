@@ -65,27 +65,25 @@
         <div class="row" style="display: flex; justify-content: space-around">
           <div class="col s6 ex1" style="margin-left:-10%">
             <!-- Grey navigation panel -->
-            <h6>Trending videos :</h6>
-            <p>
-              Lorem ipsum, or lipsum as it is sometimes known, is dummy text
-              used in laying out print, graphic or web designs. The passage is
-              attributed to an unknown typesetter in the 15th century who is
-              thought to have scrambled parts of Cicero's De Finibus Bonorum et
-              Malorum for use in a type specimen book. It usually begins with:
-              “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.” The
-              purpose of lorem ipsum is to create a natural looking block of
-              text (sentence, paragraph, page, etc.) that doesn't distract from
-              the layout. A practice not without controversy, laying out pages
-              with meaningless filler text can be very useful when the focus is
-              meant to be on design, not content. The passage experienced a
-              surge in popularity during the 1960s when Letraset used it on
-              their dry-transfer sheets, and again during the 90s as desktop
-              publishers bundled the text with their software. Today it's seen
-              all around the web; on templates, websites, and stock designs. Use
-              our generator to get your own, or read on for the authoritative
-              history of lorem ipsum.
-            </p>
+            <div class="container">
+              <h6>Trending videos :</h6>
+            </div>
+            <div class="row" v-for="(video, index) in videos_list" :key="index">
+                <!-- Card Content -->
+                <div class="container center-align">
+                  <iframe
+                   width="300"
+                   v-bind:src="video.video_path"
+                   frameborder="0"
+                   allowfullscreen
+                   controls="controls" 
+                   autoplay="false"
+                 ></iframe>
+                 <div class="container center-align">
+                   <a href="" >{{video.title}}</a>
+                 </div>
+                </div>
+            </div>
           </div>
 
           <div class="col s9 m8 ex2" style="margin-left: 140px;">
@@ -127,41 +125,6 @@
       <div class="container" style="width: 50%">
           <h6 style="margin-left: 10px; margin-bottom: 30px">Share Video</h6>
         <div class="row">
-            <!-- <form class="col s12" enctype="multipart/form-data" id="video-form" >
-              <div class="row">
-                <div class="input-field col s6">
-                  <input placeholder="" v-model="user" id="first_name" type="text" class="validate">
-                  <label for="user">Full Name</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s6">
-                  <input id="title" type="text" v-model="title">
-                  <label for="text">Title</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <div class="input-field col s12">
-                      <i class="material-icons prefix">mode_edit</i>
-                      <textarea id="icon_prefix2" class="materialize-textarea" v-model="description"></textarea>
-                      <label for="icon_prefix2">Description</label>
-                  </div>
-                </div>
-              </div>
-              <div class="file-field input-field">
-                <div class="btn">
-                  <span>File</span>
-                  <input type="file" id="file" ref="file" v-on:change="uploadImage"/>
-                </div>
-                <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text" v-model="video_path">
-                </div>
-              </div>
-              <div class="row" style="display: flex; justify-content:center" v-on:click.prevent="addVideo">
-                  <a class="waves-effect waves-light btn-small" v-on:click="addVideo"><i class="material-icons left">cloud_upload</i>Upload</a>
-              </div>
-            </form> -->
 
             <video-form v-on:submit-video-form="submitComponent"></video-form>
           </div>
