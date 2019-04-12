@@ -61,14 +61,15 @@ Vue.component('video-form',{
     methods: {
         submitVideoForm() {
             let data = {
-                title: this.title,
-                user: this.user,
-                file: this.file,
-                
+              title: this.title,
+              user: this.user,
+              description: this.description,
+              thumbnail_path: this.thumbnail_path,
+              like: this.like,
+              public: this.public,
+              file : this.file
             }
             // console.log('---------------')
-            // console.log(this.file)
-            // console.log('---------------------')
             this.$emit('submit-video-form', data)
         },
         uploadImage(event) {

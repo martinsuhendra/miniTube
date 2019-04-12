@@ -22,7 +22,7 @@ class VideoController {
 
 
     static create(req,res) {
-            
+ 
         Video.create({
             title: req.body.videoForm.title,
             user:req.body.videoForm.user,
@@ -33,6 +33,7 @@ class VideoController {
             public:0
         })
         .then(created => {
+            // console.log(created,'ini created')
             console.log("INPUT SUKSES");
             res.status(201).json(created)
         })
