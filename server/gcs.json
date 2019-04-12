@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "minitub",
+  "private_key_id": "633e4afc45c016ae62b23aa8d064e08facbf93d9",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQClsitUnmFTPJzM\nxiBWGD6NwyHtt/bN1WNTpON8Rdv91rHBNw4+lSPcbaZij4Dkgp+nMZtM/ivP8R89\nRXD/wgGYj7AXhSqcOZFp+KL00MZxjZUR78bpj8pZz5tAqj0bL0WIBp8U5Kg0FZ4R\n6VGufKozdR5YpEAzFX/nZvnXukPvnujaUzwM1SoU3O1SjE14exZfuSLIO6m8njJ0\nkelvUlEJBHCLa/4NSIgldBWKUe4A234Uyef8Pa+ePoLSSI25k48LXBDKLd46Eu44\n7/pQBA4fqKNpDm/Z/pKJ9AU359rATxRuxR6xwJEH0tjmCaIpS4FjHV3H5cpg99Ow\nJP/kORyNAgMBAAECggEACUhXfBiZXDfnkuNAmYInMvrtEiu9tF9RfrScl/Az+F8I\nO0pRzni9dxJfgWMHtgWJWy0Axcnxe2dHOEAFKhbczwaxt0ebEQB6oISw4GU30NG9\nObGEo74N+IUUbgV7gePekdXJILsEn1JctiUrkcpjIJndltqwzAvWzAhtU8QYHTrj\nPLbCL3qPd15SvCdhBcwS017jeA6Iu6T7x/37sUg4Q6fm1+1cr5rJxbr+SxAFyuU1\nUaDGzYfBA5B/9TqozTnWn05Z6xbvpjbS0gPDBSu2Y6+8XSuej9M1DJTnAYVgAsoD\neZF+CPxCMjrngyi4ju08ARg/rSHmQ0GmIBPEVsUjMwKBgQDSZzkIKpAlPV/URIHH\n/Irlkq4tAc/+lWCzr4YZoFbLeR/TgVhcSfULdOgcYtdkjzJ/jIbsNucEKOv0pao+\nuXT3+M04TiOuOK7Xw9l+ZbD/tSwtTi0fgVtJFmtJWfD5NUjtQ6VEmcCOXx1A4AmP\n9eyvtUyAYRa+msibP6lpg2BBjwKBgQDJmqwcpgJLcc69eJMsL/b6+eWQJyF1qSj3\nSxOSx5AR/9yhPCA1p5yah/t/r+kz3FddXxTmNDv2JdVlKMZ4AewwSTC8AWbEcTLt\npNg3TzO+udNw/JXRqFDy74uw7OTjsXEGZDKZ4J3tf3WRdvm1+jWUri6F8DL4lqwS\n11Ymdw56IwKBgEubKBVVJiMboNnoHDK+/zJruQcXRaSYDP3Erw16XnYTempIanYP\nZWzOf7Hjmr7Z7i2DU+CCAhWulst81GZhwjRxRV1cRtoOKFYEXJ1c8XORqORG2VQe\n6ayjz722Ai+rBB+uVS8HiPggGaT8XLNMjda98VWYjdHEUR3ojHoL6YTlAoGBAIJJ\n9YUmPEFpsYR9kg9yiBk2uwdoYpVZ12HKIUIwuokHZBzHcMF8KxcrXnvswbeEZOmw\n8x67Dy1K0hhoO6t/ApdKFbbK6RF3XsR6TkmgY/6UtXNFqcUvE/GMoiibUGleWX8Z\n7iHIKgg84Uw7KbJTm6EU2Hgy/Z3uMhKTG9gMBU0lAoGAXB7W9PWF75xu8x3vuDLl\nstpbLejchGr7HXHbK/Tnk0agcfoVPFDDeeqB1f/ecRoBeD3sIi4PgpAvH0Q99/o8\nazeVkoWk0Cg9Jw1ty1Wh49bx2oVbOiNOR+S5HR0cKPr12ND4MD20Sss89ropZjQ0\nOd0+WMeMX+Mitx0M26ONNfQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "minitub@minitub.iam.gserviceaccount.com",
+  "client_id": "109009766166963610645",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/minitub%40minitub.iam.gserviceaccount.com"
+}
